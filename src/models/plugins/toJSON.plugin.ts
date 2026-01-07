@@ -33,7 +33,7 @@ function toJSON<T extends Document>(schema: Schema<T>) {
         | undefined;
 
     schema.set('toJSON', {
-        transform(doc: Document, ret: any, options: ToObjectOptions): any {
+        transform(doc: any, ret: any, options: any): any {
             defaultTransform(ret);
             if (originalTransform) {
                 return originalTransform(doc, ret, options);

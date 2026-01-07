@@ -1,0 +1,16 @@
+name: Approval Test Pipeline
+
+on:
+    workflow_dispatch:
+
+jobs:
+    wait-for-approval:
+        name: Wait for Approval
+        runs-on: ubuntu-latest
+        environment: development
+
+        steps:
+            - name: Approval granted
+              run: |
+                  echo "✅ Approval received"
+                  echo "🎉 Pipeline continued successfully"
